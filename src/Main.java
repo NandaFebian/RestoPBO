@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        RestoLogin RestoLogin = new RestoLogin();
-        RestoLogin.main(new String[0]);
+        RestoLogin resto_login = new RestoLogin();
+        resto_login.LoginResto();
     }
+
 }
