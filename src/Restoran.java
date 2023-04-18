@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Restoran {
     private static ArrayList<Restoran> daftarRestoran = new ArrayList<>();
-    private static ArrayList<Menu> menuu = new ArrayList<>();
+    private static ArrayList<Menu> menus = new ArrayList<>();
     private String namaRestoran;
     private String alamatRestoran;
     private ArrayList<String> daftarMenu;
@@ -67,7 +67,7 @@ public class Restoran {
                 ", alamat=" + alamatRestoran + ' ';
     }
 
-    public static void tambahRestoran() {
+    public static void addRestoran() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> daftarMenu = new ArrayList<>();
         ArrayList<Double> harga = new ArrayList<>();
@@ -89,7 +89,7 @@ public class Restoran {
                 daftarMenu.add(menu);
                 harga.add(hrg);
                 Menu menubaru = new Menu(daftarMenu, harga);
-                menuu.add(menubaru);
+                menus.add(menubaru);
             }
             Restoran restoranTambah = new Restoran(namaRestoran, alamatRestoran, daftarMenu, harga);
             daftarRestoran.add(restoranTambah);
@@ -99,7 +99,7 @@ public class Restoran {
     }
 
 
-    public static void hapusRestoran() {
+    public static void delRestoran() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Masukkan nama restoran yang ingin dihapus : ");
         String namaRestoran = scanner.next();
@@ -121,7 +121,7 @@ public class Restoran {
         }
     }
 
-    public static void lihatRestoran() {
+    public static void viewRestoran() {
         if (daftarRestoran.size() > 0) {
             for (int i = 0; i < daftarRestoran.size(); i++) {
                 System.out.println(i + 1 + ". " + daftarRestoran.get(i).toString());
@@ -131,14 +131,14 @@ public class Restoran {
         }
     }
 
-    public static void lihatMenu(){
+    public static void viewMenu(){
         Scanner scanner = new Scanner(System.in);
-        lihatRestoran();
+        viewRestoran();
         System.out.print("Masukkan nama restoran yang ingin dilihat menunya :");
         String namaRestoran = scanner.next();
         System.out.println("Daftar Menu di " + namaRestoran + ":");
-        for (int i = 0; i < menuu.size(); i++) {
-            Menu menu = menuu.get(i);
+        for (int i = 0; i < menus.size(); i++) {
+            Menu menu = menus.get(i);
             System.out.println((i+1) + ". " + menu.getNamaMenu() + "\tRp " + menu.getHargaMenu());
         }
     }

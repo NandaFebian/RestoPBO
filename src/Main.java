@@ -33,10 +33,10 @@ public class Main {
                         String choice = bf.readLine();
                         switch (choice){
                             case"1":
-                                restoran.lihatMenu();
+                                restoran.viewMenu();
                                 break;
                         }
-                        System.out.print("Apakah Anda ingin login kembali? (1 = ya, 2 = tidak) : ");
+                        System.out.print("Login lagi? (1 = ya, 2 = tidak) : ");
                         loginkembali = scanner.nextInt();
                     }while(loginkembali==2);
 
@@ -51,27 +51,27 @@ public class Main {
                         String choice = bf.readLine();
                         switch (choice) {
                             case "1":
-                                restoran.lihatRestoran();
+                                restoran.viewRestoran();
                                 break;
 
                             case "2":
-                                restoran.tambahRestoran();
+                                restoran.addRestoran();
                                 break;
 
                             case "3":
-                                restoran.hapusRestoran();
+                                restoran.delRestoran();
                                 break;
 
                             case "4":
                                 masuk = false;
                                 break;
                         }
-                        System.out.print("Apakah Anda ingin login kembali? (1 = ya, 2 = tidak) : ");
+                        System.out.print("Login lagi? (1 = ya, 2 = tidak) : ");
                         loginkembali = scanner.nextInt();
                     } while (loginkembali==2);
                 }
             } else {
-                System.out.println("Username atau Password Anda tidak sesuai, silahkan coba lagi!");
+                System.out.println("Username atau Password Anda salah, coba lagi!");
             }
         } while (!berhasilLogin);
     }
